@@ -1,0 +1,792 @@
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap');
+
+/* WordPressテーマのbody背景をリセット */
+body { background: #fff !important; background-image: none !important; }
+.entry-content { background: #fff !important; background-image: none !important; }
+.site-main { background: #fff !important; background-image: none !important; }
+.page-content { background: #fff !important; background-image: none !important; }
+
+.lp-wrap * { box-sizing: border-box; margin: 0; padding: 0; }
+.lp-wrap {
+  font-family: 'Noto Sans JP', sans-serif;
+  color: #1a1a1a;
+  background: #fff !important;
+  overflow-x: hidden;
+  position: relative;
+  isolation: isolate;
+}
+.lp-fail-bg,
+.lp-step-bg {
+  background: #f5f5f3 !important;
+  position: relative;
+  isolation: isolate;
+}
+.lp-dl-bg {
+  background: #1a1a1a !important;
+  position: relative;
+  isolation: isolate;
+}
+.lp-price-inner,
+.lp-section {
+  background: inherit;
+  position: relative;
+  z-index: 1;
+}
+
+/* ===== FV ===== */
+.lp-fv {
+  position: relative;
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: #0a0a0a;
+}
+.lp-fv-bg {
+  position: absolute;
+  inset: 0;
+  background-image: url('https://resolo.net/wp-content/uploads/2025/05/key_img-scaled.jpg');
+  background-size: cover;
+  background-position: center;
+  opacity: 0.55;
+  filter: saturate(1.2);
+}
+.lp-fv-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(0,181,160,0.35) 0%, rgba(10,10,10,0.6) 60%);
+}
+.lp-fv-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: 80px 24px 60px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+.lp-fv-label {
+  display: inline-block;
+  background: #00B5A0;
+  color: #fff;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 5px 18px;
+  border-radius: 20px;
+  margin-bottom: 24px;
+  letter-spacing: 0.15em;
+}
+.lp-fv-en {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(13px, 2vw, 16px);
+  color: rgba(255,255,255,0.6);
+  letter-spacing: 0.2em;
+  margin-bottom: 16px;
+}
+.lp-fv h1 {
+  font-size: clamp(28px, 5.5vw, 52px);
+  font-weight: 900;
+  line-height: 1.3;
+  color: #fff;
+  margin-bottom: 24px;
+  text-shadow: 0 2px 20px rgba(0,0,0,0.4);
+}
+.lp-fv h1 em {
+  font-style: normal;
+  color: #00B5A0;
+  border-bottom: 3px solid #00B5A0;
+  padding-bottom: 2px;
+}
+.lp-fv-sub {
+  font-size: clamp(14px, 2vw, 17px);
+  color: rgba(255,255,255,0.85);
+  line-height: 1.9;
+  margin-bottom: 40px;
+}
+.lp-btn-primary {
+  display: inline-block;
+  background: #00B5A0;
+  color: #fff;
+  font-size: 17px;
+  font-weight: 700;
+  padding: 18px 52px;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: all 0.25s;
+  letter-spacing: 0.05em;
+}
+.lp-btn-primary:hover {
+  background: #009e8c;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0,181,160,0.35);
+}
+.lp-fv-note {
+  font-size: 13px;
+  color: rgba(255,255,255,0.6);
+  margin-top: 16px;
+}
+
+/* ===== 共通セクション ===== */
+.lp-section {
+  padding: 80px 24px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+.lp-section-label {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 13px;
+  letter-spacing: 0.25em;
+  color: #00B5A0;
+  text-align: center;
+  margin-bottom: 12px;
+  display: block;
+}
+.lp-section-title {
+  font-size: clamp(22px, 4vw, 34px);
+  font-weight: 900;
+  text-align: center;
+  margin-bottom: 12px;
+  line-height: 1.4;
+  color: #1a1a1a;
+}
+.lp-section-bar {
+  width: 32px;
+  height: 3px;
+  background: #00B5A0;
+  margin: 0 auto 16px;
+}
+.lp-section-sub {
+  text-align: center;
+  color: #666;
+  font-size: 15px;
+  line-height: 1.9;
+  margin-bottom: 48px;
+}
+
+/* ===== 失敗パターン ===== */
+.lp-fail-bg { position: relative; z-index: 1;
+  background: #f5f5f3;
+}
+.lp-fail-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 16px;
+}
+.lp-fail-card {
+  background: #fff !important;
+  border-radius: 4px;
+  padding: 28px 24px;
+  border-top: 3px solid #1a1a1a;
+  position: relative;
+}
+.lp-fail-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 36px;
+  font-weight: 600;
+  color: #e8e8e8;
+  position: absolute;
+  top: 16px;
+  right: 20px;
+  line-height: 1;
+}
+.lp-fail-icon {
+  width: 36px;
+  height: 36px;
+  background: #1a1a1a;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+.lp-fail-icon::after {
+  content: '×';
+  color: #fff;
+  font-size: 16px;
+  font-weight: 700;
+}
+.lp-fail-text {
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.6;
+  color: #1a1a1a;
+  position: relative;
+  z-index: 1;
+}
+
+/* ===== 効果データ ===== */
+.lp-data-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2px;
+  background: #1a1a1a;
+  border: 2px solid #1a1a1a;
+}
+.lp-data-card {
+  background: #fff !important;
+  padding: 40px 24px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.lp-data-card::before {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0;
+  width: 100%;
+  height: 4px;
+  background: #00B5A0;
+}
+.lp-data-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 64px;
+  font-weight: 600;
+  color: #1a1a1a;
+  line-height: 1;
+  margin-bottom: 12px;
+}
+.lp-data-num span { font-size: 28px; }
+.lp-data-label {
+  font-size: 13px;
+  color: #666;
+  line-height: 1.7;
+}
+.lp-data-note {
+  text-align: center;
+  font-size: 12px;
+  color: #aaa;
+  margin-top: 20px;
+}
+
+/* ===== 事例PDF ===== */
+.lp-dl-bg {
+  background: #1a1a1a;
+  color: #fff;
+}
+.lp-dl-inner {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 80px 24px;
+}
+.lp-dl-box {
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 4px;
+  padding: 48px 40px;
+  max-width: 620px;
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.lp-dl-box::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 3px;
+  background: #00B5A0;
+}
+.lp-dl-box h3 {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 24px;
+  line-height: 1.6;
+  color: #fff;
+}
+.lp-dl-list {
+  list-style: none;
+  text-align: left;
+  margin-bottom: 32px;
+  display: inline-block;
+}
+.lp-dl-list li {
+  font-size: 14px;
+  color: rgba(255,255,255,0.8);
+  padding: 7px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.lp-dl-list li::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  background: #00B5A0;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+.lp-btn-dl {
+  display: inline-block;
+  background: #00B5A0;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 700;
+  padding: 16px 44px;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: all 0.2s;
+  letter-spacing: 0.05em;
+}
+.lp-btn-dl:hover {
+  background: #009e8c;
+  transform: translateY(-2px);
+}
+
+/* ===== 料金 ===== */
+.lp-price-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 24px;
+}
+.lp-price-card {
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  padding: 40px 28px;
+  text-align: center;
+  position: relative;
+  transition: transform 0.2s;
+}
+.lp-price-card:hover { transform: translateY(-4px); }
+.lp-price-card.featured {
+  border-color: #00B5A0;
+  border-width: 2px;
+}
+.lp-price-badge {
+  position: absolute;
+  top: -14px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #00B5A0;
+  color: #fff;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 4px 20px;
+  border-radius: 20px;
+  white-space: nowrap;
+  letter-spacing: 0.05em;
+}
+.lp-price-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 14px;
+  letter-spacing: 0.2em;
+  color: #999;
+  margin-bottom: 12px;
+}
+.lp-price-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 52px;
+  font-weight: 600;
+  color: #1a1a1a;
+  line-height: 1;
+  margin-bottom: 4px;
+}
+.lp-price-num span { font-size: 20px; }
+.lp-price-tag {
+  font-size: 13px;
+  color: #999;
+  margin-bottom: 20px;
+}
+.lp-price-copy {
+  font-size: 13px;
+  color: #00B5A0;
+  font-weight: 700;
+  margin-bottom: 20px;
+  padding: 8px 12px;
+  background: rgba(0,181,160,0.08);
+  border-radius: 4px;
+}
+.lp-price-list {
+  list-style: none;
+  text-align: left;
+}
+.lp-price-list li {
+  font-size: 13px;
+  color: #555;
+  padding: 6px 0;
+  border-bottom: 1px solid #f0f0f0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.lp-price-list li::before {
+  content: '';
+  width: 5px;
+  height: 5px;
+  background: #00B5A0;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+/* ===== STEP ===== */
+.lp-step-bg { background: #f5f5f3; }
+.lp-step-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+.lp-step-item {
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+  position: relative;
+  padding-bottom: 36px;
+}
+.lp-step-item:last-child { padding-bottom: 0; }
+.lp-step-item:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  left: 20px;
+  top: 40px;
+  bottom: 0;
+  width: 1px;
+  background: #d0d0d0;
+}
+.lp-step-num {
+  width: 40px;
+  height: 40px;
+  background: #1a1a1a;
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 18px;
+  font-weight: 600;
+  flex-shrink: 0;
+  position: relative;
+  z-index: 1;
+}
+.lp-step-title {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 6px;
+  padding-top: 8px;
+}
+.lp-step-desc {
+  font-size: 14px;
+  color: #666;
+  line-height: 1.8;
+}
+
+/* ===== CTA ===== */
+.lp-cta {
+  position: relative;
+  overflow: hidden;
+  background: #0a0a0a;
+  color: #fff;
+  text-align: center;
+  padding: 100px 24px;
+}
+.lp-cta-bg {
+  position: absolute;
+  inset: 0;
+  background-image: url('https://resolo.net/wp-content/uploads/2025/05/key_img-scaled.jpg');
+  background-size: cover;
+  background-position: center top;
+  opacity: 0.15;
+  filter: saturate(0.5);
+}
+.lp-cta-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(10,10,10,0.75);
+}
+.lp-cta-content { position: relative; z-index: 2; }
+.lp-cta h2 {
+  font-size: clamp(24px, 4vw, 38px);
+  font-weight: 900;
+  margin-bottom: 16px;
+  line-height: 1.4;
+}
+.lp-cta p {
+  font-size: 15px;
+  color: rgba(255,255,255,0.8);
+  margin-bottom: 36px;
+  line-height: 1.9;
+}
+.lp-cta-list {
+  list-style: none;
+  display: inline-flex;
+  flex-direction: column;
+  gap: 10px;
+  text-align: left;
+  margin-bottom: 44px;
+}
+.lp-cta-list li {
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: rgba(255,255,255,0.9);
+}
+.lp-cta-list li::before {
+  content: '';
+  width: 8px;
+  height: 8px;
+  background: #00B5A0;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+.lp-btn-white {
+  display: inline-block;
+  background: #fff !important;
+  color: #1a1a1a;
+  font-size: 17px;
+  font-weight: 700;
+  padding: 20px 56px;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: all 0.25s;
+  letter-spacing: 0.05em;
+}
+.lp-btn-white:hover {
+  background: #00B5A0;
+  color: #fff;
+  transform: translateY(-2px);
+}
+.lp-cta-tel {
+  margin-top: 28px;
+  font-size: 14px;
+  color: rgba(255,255,255,0.6);
+  line-height: 2;
+}
+.lp-cta-tel a {
+  color: #fff;
+  font-size: 28px;
+  font-weight: 900;
+  text-decoration: none;
+  display: block;
+  margin-top: 4px;
+}
+
+/* ===== レスポンシブ ===== */
+@media (max-width: 600px) {
+  .lp-fv { min-height: 100svh; }
+  .lp-dl-box { padding: 32px 20px; }
+  .lp-price-grid { grid-template-columns: 1fr; }
+  .lp-data-grid { grid-template-columns: 1fr; }
+}
+</style>
+
+<div class="lp-wrap">
+
+<!-- FV -->
+<div class="lp-fv">
+  <div class="lp-fv-bg"></div>
+  <div class="lp-fv-overlay"></div>
+  <div class="lp-fv-content">
+    <div class="lp-fv-label">名古屋 採用動画制作</div>
+    <p class="lp-fv-en">Recruitment Video Production</p>
+    <h1>採用動画を作っても<br><em>応募が来ない</em>を<br>解決します</h1>
+    <p class="lp-fv-sub">ちょっとした設計の違いで大きく変わります。<br>実際の事例をもとに改善ポイントをご提案。</p>
+    <a href="https://resolo.net/contact/" class="lp-btn-primary">無料相談はこちら →</a>
+    <p class="lp-fv-note">30分オンラインOK・まずはお気軽にご相談ください</p>
+  </div>
+</div>
+
+<!-- 失敗パターン -->
+<div class="lp-fail-bg">
+  <div class="lp-section">
+    <span class="lp-section-label">PROBLEM</span>
+    <h2 class="lp-section-title">こんな状態になっていませんか？</h2>
+    <div class="lp-section-bar"></div>
+    <p class="lp-section-sub">採用動画で応募が来ない会社に共通する5つの失敗パターン。<br>これらを避けることで効果的な採用動画に近づきます。</p>
+    <div class="lp-fail-grid">
+      <div class="lp-fail-card">
+        <div class="lp-fail-num">01</div>
+        <div class="lp-fail-icon"></div>
+        <div class="lp-fail-text">動画を作ったのに<br>応募が増えない</div>
+      </div>
+      <div class="lp-fail-card">
+        <div class="lp-fail-num">02</div>
+        <div class="lp-fail-icon"></div>
+        <div class="lp-fail-text">とりあえずの会社紹介動画<br>になっている</div>
+      </div>
+      <div class="lp-fail-card">
+        <div class="lp-fail-num">03</div>
+        <div class="lp-fail-icon"></div>
+        <div class="lp-fail-text">求職者目線で<br>情報が足りない</div>
+      </div>
+      <div class="lp-fail-card">
+        <div class="lp-fail-num">04</div>
+        <div class="lp-fail-icon"></div>
+        <div class="lp-fail-text">最後まで視聴されず<br>離脱される</div>
+      </div>
+      <div class="lp-fail-card">
+        <div class="lp-fail-num">05</div>
+        <div class="lp-fail-icon"></div>
+        <div class="lp-fail-text">応募までの<br>導線が弱い</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 効果データ -->
+<div style="background:#fff;">
+  <div class="lp-section">
+    <span class="lp-section-label">RESULT</span>
+    <h2 class="lp-section-title">採用動画を導入した企業の変化</h2>
+    <div class="lp-section-bar"></div>
+    <p class="lp-section-sub">採用動画を活用することで、応募者の理解度が高まり、<br>採用活動全体の質の向上が期待できます。</p>
+    <div class="lp-data-grid">
+      <div class="lp-data-card">
+        <div class="lp-data-num">30<span>%</span></div>
+        <div class="lp-data-label">応募数の増加<br>（導入事例）</div>
+      </div>
+      <div class="lp-data-card">
+        <div class="lp-data-num">45<span>%</span></div>
+        <div class="lp-data-label">内定承諾率<br>（30%→45%に改善）</div>
+      </div>
+      <div class="lp-data-card">
+        <div class="lp-data-num">18<span>%</span></div>
+        <div class="lp-data-label">離職率<br>（30%→18%に低下）</div>
+      </div>
+    </div>
+    <p class="lp-data-note">※採用動画の活用事例および各種公開データをもとに作成</p>
+  </div>
+</div>
+
+<!-- 事例PDF DL -->
+<div class="lp-dl-bg">
+  <div class="lp-dl-inner">
+    <span class="lp-section-label" style="color:#00B5A0;">CASE STUDY</span>
+    <h2 class="lp-section-title" style="color:#fff;">実際の導入事例を無料公開中</h2>
+    <div class="lp-section-bar"></div>
+    <p class="lp-section-sub" style="color:rgba(255,255,255,0.7);">製造業・不動産・専門商社など6社の採用動画事例と<br>お客様の声をまとめた資料をご覧いただけます。</p>
+    <div class="lp-dl-box">
+      <h3>【無料】採用動画の導入事例集<br>お客様の声6社分</h3>
+      <ul class="lp-dl-list">
+        <li>応募が増えた採用動画の設計ポイント</li>
+        <li>業種別・実際の制作事例と動画URL</li>
+        <li>お客様のリアルな感想・コメント</li>
+        <li>効果が出た動画に共通する4つの要素</li>
+      </ul>
+      <a href="/wp-content/uploads/saiyo-jirei.pdf" class="lp-btn-dl" download>資料を無料ダウンロード →</a>
+    </div>
+  </div>
+</div>
+
+<!-- 料金プラン -->
+<div style="background:#fff;">
+  <div class="lp-section">
+    <span class="lp-section-label">PLAN</span>
+    <h2 class="lp-section-title">料金プラン</h2>
+    <div class="lp-section-bar"></div>
+    <p class="lp-section-sub">ご予算・ご要望に合わせてカスタマイズも可能です。<br>お気軽にご相談ください。</p>
+    <div class="lp-price-grid">
+      <div class="lp-price-card">
+        <div class="lp-price-name">STARTER</div>
+        <div class="lp-price-num"><span>¥</span>20<span>万円〜</span></div>
+        <div class="lp-price-tag">税別</div>
+        <div class="lp-price-copy">まずは1本つくってみたい方に</div>
+        <ul class="lp-price-list">
+          <li>動画1本制作</li>
+          <li>簡易編集</li>
+        </ul>
+      </div>
+      <div class="lp-price-card featured">
+        <div class="lp-price-badge">人気プラン</div>
+        <div class="lp-price-name">STANDARD</div>
+        <div class="lp-price-num"><span>¥</span>40<span>万円〜</span></div>
+        <div class="lp-price-tag">税別</div>
+        <div class="lp-price-copy">何を伝えるかから一緒に設計</div>
+        <ul class="lp-price-list">
+          <li>動画2本制作</li>
+          <li>構成設計（訴求整理）</li>
+          <li>用途別展開（採用＋SNS）</li>
+        </ul>
+      </div>
+      <div class="lp-price-card">
+        <div class="lp-price-name">PREMIUM</div>
+        <div class="lp-price-num"><span>¥</span>60<span>万円〜</span></div>
+        <div class="lp-price-tag">税別</div>
+        <div class="lp-price-copy">戦略から撮影まで一括サポート</div>
+        <ul class="lp-price-list">
+          <li>動画3本制作</li>
+          <li>構成設計</li>
+          <li>撮影ディレクション</li>
+          <li>活用設計（LP/広告/SNS）</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 制作の流れ -->
+<div class="lp-step-bg">
+  <div class="lp-section">
+    <span class="lp-section-label">FLOW</span>
+    <h2 class="lp-section-title">制作の流れ</h2>
+    <div class="lp-section-bar"></div>
+    <p class="lp-section-sub">ご相談から納品まで約2ヶ月が標準的なスケジュールです。</p>
+    <div class="lp-step-list">
+      <div class="lp-step-item">
+        <div class="lp-step-num">1</div>
+        <div>
+          <div class="lp-step-title">無料相談（オンライン・お電話）</div>
+          <div class="lp-step-desc">ご要望・ご予算・納期をお聞きします。30分程度でOKです。</div>
+        </div>
+      </div>
+      <div class="lp-step-item">
+        <div class="lp-step-num">2</div>
+        <div>
+          <div class="lp-step-title">お見積もり提出</div>
+          <div class="lp-step-desc">ヒアリング内容をもとに、3営業日以内にお見積もりをご提出します。</div>
+        </div>
+      </div>
+      <div class="lp-step-item">
+        <div class="lp-step-num">3</div>
+        <div>
+          <div class="lp-step-title">企画・構成・台本作成</div>
+          <div class="lp-step-desc">動画の目的・ターゲット・構成案・台本をご提案します。</div>
+        </div>
+      </div>
+      <div class="lp-step-item">
+        <div class="lp-step-num">4</div>
+        <div>
+          <div class="lp-step-title">撮影</div>
+          <div class="lp-step-desc">スケジュールを調整の上、撮影を実施します。</div>
+        </div>
+      </div>
+      <div class="lp-step-item">
+        <div class="lp-step-num">5</div>
+        <div>
+          <div class="lp-step-title">編集・修正対応</div>
+          <div class="lp-step-desc">撮影後、約1週間で初稿をご提出。修正対応を経て完パケまで約1ヶ月。</div>
+        </div>
+      </div>
+      <div class="lp-step-item">
+        <div class="lp-step-num">6</div>
+        <div>
+          <div class="lp-step-title">納品</div>
+          <div class="lp-step-desc">データでのご納品となります。納品後の活用方法もご相談いただけます。</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CTA -->
+<div class="lp-cta">
+  <div class="lp-cta-bg"></div>
+  <div class="lp-cta-overlay"></div>
+  <div class="lp-cta-content">
+    <h2>まずは無料で<br>採用動画を診断します</h2>
+    <p>貴社の採用課題に合わせた改善案を<br>その場でご提案します。</p>
+    <ul class="lp-cta-list">
+      <li>貴社の採用動画を診断（無料）</li>
+      <li>応募が増える改善案をその場でご提案</li>
+      <li>30分オンラインOK</li>
+    </ul>
+    <a href="https://resolo.net/contact/" class="lp-btn-white">無料相談のお申し込みはこちら →</a>
+    <div class="lp-cta-tel">
+      お電話でのお問い合わせ<br>
+      <a href="tel:0528984971">052-898-4971</a>
+    </div>
+  </div>
+</div>
+
+</div>
