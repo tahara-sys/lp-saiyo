@@ -4,6 +4,32 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>無料相談のお申し込み | Resolo 採用動画制作</title>
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18154724477"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'AW-18154724477');
+</script>
+  <script>
+function gtag_report_conversion(url) {
+  var callback = function () {
+    if (typeof(url) != 'undefined') { window.location = url; }
+  };
+  gtag('event', 'conversion', {
+    'send_to': 'AW-18154724477/_DoaCJ-w9qwcEP247NBD',
+    'value': 1.0,
+    'currency': 'JPY',
+    'event_callback': callback
+  });
+  return false;
+}
+
+document.addEventListener('netlify-form-success', function(event) {
+  gtag_report_conversion();
+}, false);
+</script>
 <style>
 * { box-sizing: border-box; margin: 0; padding: 0; }
 body {
