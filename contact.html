@@ -4,30 +4,30 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>無料相談のお申し込み | Resolo 採用動画制作</title>
-  <!-- Google tag (gtag.js) -->
+<!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18154724477"></script>
 <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'AW-18154724477');
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'AW-18154724477');
 </script>
-  <script>
+<script>
 function gtag_report_conversion(url) {
-  var callback = function () {
-    if (typeof(url) != 'undefined') { window.location = url; }
-  };
-  gtag('event', 'conversion', {
-    'send_to': 'AW-18154724477/_DoaCJ-w9qwcEP247NBD',
-    'value': 1.0,
-    'currency': 'JPY',
-    'event_callback': callback
-  });
-  return false;
+var callback = function () {
+if (typeof(url) != 'undefined') { window.location = url; }
+};
+gtag('event', 'conversion', {
+'send_to': 'AW-18154724477/_DoaCJ-w9qwcEP247NBD',
+'value': 1.0,
+'currency': 'JPY',
+'event_callback': callback
+});
+return false;
 }
 
 document.addEventListener('netlify-form-success', function(event) {
-  gtag_report_conversion();
+gtag_report_conversion();
 }, false);
 </script>
 <style>
@@ -50,7 +50,6 @@ header {
 .logo span { color: #1ec98a; }
 .phone { font-size: 13px; color: #8a9a8e; }
 .phone strong { color: #1ec98a; font-size: 16px; }
-
 .hero {
   background: #111a14;
   padding: 60px 32px 48px;
@@ -75,7 +74,6 @@ header {
 .points { display: flex; justify-content: center; gap: 24px; margin-top: 24px; flex-wrap: wrap; }
 .point { display: flex; align-items: center; gap: 7px; font-size: 13px; color: #c8d4ca; }
 .dot { width: 6px; height: 6px; border-radius: 50%; background: #1ec98a; flex-shrink: 0; }
-
 .body { max-width: 560px; margin: 0 auto; padding: 40px 24px 60px; }
 .card {
   background: #131b15;
@@ -85,16 +83,21 @@ header {
 }
 .card-title {
   font-size: 16px; font-weight: 700; color: #fff;
-  margin-bottom: 28px; padding-bottom: 16px;
+  margin-bottom: 4px; padding-bottom: 16px;
   border-bottom: 1px solid #1e2a20;
+}
+.card-subtitle {
+  font-size: 12px; color: #4a5e4e;
+  margin-bottom: 24px; padding-top: 8px;
 }
 .field { margin-bottom: 20px; }
 label {
   display: block; font-size: 12px; font-weight: 500;
   color: #8a9a8e; letter-spacing: 0.06em;
-  margin-bottom: 7px; text-transform: uppercase;
+  margin-bottom: 7px;
 }
 .req { color: #1ec98a; margin-left: 4px; }
+.opt { color: #4a5e4e; font-size: 10px; margin-left: 6px; font-weight: 400; }
 input, select, textarea {
   width: 100%; background: #0d1117;
   border: 1px solid #2a3a2d; border-radius: 8px;
@@ -108,7 +111,7 @@ input:focus, select:focus, textarea:focus {
   box-shadow: 0 0 0 3px rgba(30,201,138,0.1);
 }
 input::placeholder, textarea::placeholder { color: #3a4d3e; }
-textarea { min-height: 100px; resize: vertical; line-height: 1.6; }
+textarea { min-height: 90px; resize: vertical; line-height: 1.6; }
 select {
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%238a9a8e' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");
   background-repeat: no-repeat; background-position: right 14px center;
@@ -116,6 +119,19 @@ select {
 }
 select option { background: #131b15; }
 .row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.reassurance {
+  background: rgba(30,201,138,0.05);
+  border: 1px solid rgba(30,201,138,0.15);
+  border-radius: 8px;
+  padding: 12px 16px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+.reassurance-icon { color: #1ec98a; font-size: 16px; flex-shrink: 0; margin-top: 1px; }
+.reassurance-text { font-size: 12px; color: #8a9a8e; line-height: 1.7; }
+.reassurance-text strong { color: #c8d4ca; font-weight: 600; }
 button[type="submit"] {
   width: 100%; background: #1ec98a; color: #0a1a0f;
   border: none; border-radius: 8px; font-size: 15px;
@@ -125,13 +141,35 @@ button[type="submit"] {
   letter-spacing: 0.02em;
 }
 button[type="submit"]:hover { background: #18b07a; }
-.note { text-align: center; font-size: 12px; color: #4a5e4e; margin-top: 14px; line-height: 1.6; }
-
+.note {
+  text-align: center; font-size: 12px; color: #4a5e4e;
+  margin-top: 12px; line-height: 1.7;
+}
+.note-step {
+  display: flex; align-items: center; justify-content: center;
+  gap: 8px; margin-top: 10px; flex-wrap: wrap;
+}
+.step {
+  display: flex; align-items: center; gap: 5px;
+  font-size: 11px; color: #4a5e4e;
+}
+.step-num {
+  width: 18px; height: 18px; border-radius: 50%;
+  background: #1e2a20; color: #1ec98a;
+  font-size: 10px; font-weight: 700;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+.step-arrow { color: #2a3a2d; font-size: 10px; }
+.privacy-note {
+  text-align: center; margin-top: 16px; font-size: 11px; color: #3a4d3e;
+}
+.privacy-note a { color: #4a5e4e; text-decoration: underline; }
+.privacy-note a:hover { color: #1ec98a; }
 .trust { display: flex; justify-content: center; gap: 28px; margin-top: 36px; flex-wrap: wrap; }
 .trust-item { text-align: center; }
 .trust-num { font-size: 22px; font-weight: 700; color: #1ec98a; }
 .trust-label { font-size: 11px; color: #4a5e4e; margin-top: 2px; }
-
 .back { text-align: center; margin-top: 24px; }
 .back a { color: #4a5e4e; font-size: 13px; text-decoration: none; }
 .back a:hover { color: #1ec98a; }
@@ -157,10 +195,16 @@ button[type="submit"]:hover { background: #18b07a; }
 
 <div class="body">
   <div class="card">
-    <div class="card-title">お問い合わせフォーム</div>
+    <div class="card-title">無料診断を申し込む</div>
+    <div class="card-subtitle">必須項目（*）のみでお申し込みいただけます</div>
 
     <form name="contact" method="POST" data-netlify="true" action="/thanks.html">
       <input type="hidden" name="form-name" value="contact">
+
+      <div class="reassurance">
+        <div class="reassurance-icon">🔒</div>
+        <div class="reassurance-text"><strong>しつこい営業は一切しません。</strong>ご相談後、押し売りや継続的な営業連絡はなく、内容にご納得いただけた場合のみ先に進みます。</div>
+      </div>
 
       <div class="row">
         <div class="field">
@@ -179,12 +223,12 @@ button[type="submit"]:hover { background: #18b07a; }
       </div>
 
       <div class="field">
-        <label>電話番号</label>
+        <label>電話番号<span class="opt">任意</span></label>
         <input type="tel" name="phone" placeholder="052-000-0000">
       </div>
 
       <div class="field">
-        <label>ご相談内容</label>
+        <label>ご相談内容<span class="opt">任意</span></label>
         <select name="inquiry">
           <option value="" disabled selected>選択してください</option>
           <option>採用動画を初めて作りたい</option>
@@ -196,12 +240,24 @@ button[type="submit"]:hover { background: #18b07a; }
       </div>
 
       <div class="field">
-        <label>ご質問・ご要望</label>
-        <textarea name="message" placeholder="採用の課題や、動画制作について気になることをお気軽にご記入ください"></textarea>
+        <label>ご質問・ご要望<span class="opt">任意</span></label>
+        <textarea name="message" placeholder="採用の課題や、気になることがあればお気軽にどうぞ（なくてもOKです）"></textarea>
       </div>
 
-      <button type="submit">無料相談を申し込む →</button>
-      <div class="note">送信後、1営業日以内にご連絡いたします</div>
+      <button type="submit">無料診断を申し込む →</button>
+      <div class="note">
+        送信後、1営業日以内にご連絡します
+        <div class="note-step">
+          <div class="step"><div class="step-num">1</div>フォーム送信</div>
+          <div class="step-arrow">›</div>
+          <div class="step"><div class="step-num">2</div>日程調整のご連絡</div>
+          <div class="step-arrow">›</div>
+          <div class="step"><div class="step-num">3</div>30分オンライン相談</div>
+        </div>
+      </div>
+      <div class="privacy-note">
+        送信いただいた情報は<a href="https://resolo-saiyo.com/privacy" target="_blank">プライバシーポリシー</a>に基づき適切に管理します
+      </div>
     </form>
   </div>
 
