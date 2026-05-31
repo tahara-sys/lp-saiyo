@@ -582,6 +582,12 @@ body { background: #fff !important; background-image: none !important; }
   .lp-price-grid { grid-template-columns: 1fr; }
   .lp-data-grid { grid-template-columns: 1fr; }
 }
+@media (max-width: 768px) {
+  .lp-works-grid { grid-template-columns: repeat(2,1fr) !important; }
+}
+@media (max-width: 480px) {
+  .lp-works-grid { grid-template-columns: 1fr !important; }
+}
 </style>
 
 <div class="lp-wrap">
@@ -724,7 +730,7 @@ body { background: #fff !important; background-image: none !important; }
     <h2 class="lp-section-title">採用実績</h2>
     <div class="lp-section-bar"></div>
     <p class="lp-section-sub">実際にリソロが制作した採用動画の一部をご紹介します。</p>
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:32px;margin-top:40px;">
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:32px;margin-top:40px;" class="lp-works-grid">
 
       <div>
         <div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:8px;">
