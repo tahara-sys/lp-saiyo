@@ -173,6 +173,33 @@ button[type="submit"]:hover { background: #18b07a; }
 .back { text-align: center; margin-top: 24px; }
 .back a { color: #4a5e4e; font-size: 13px; text-decoration: none; }
 .back a:hover { color: #1ec98a; }
+
+.notice-box {
+  background: #131b15;
+  border: 1px solid #1e2a20;
+  border-radius: 16px;
+  padding: 48px 32px;
+  text-align: center;
+}
+.notice-icon { font-size: 48px; margin-bottom: 20px; }
+.notice-title {
+  font-size: 20px; font-weight: 700; color: #fff;
+  margin-bottom: 16px; line-height: 1.5;
+}
+.notice-text {
+  font-size: 14px; color: #8a9a8e; line-height: 1.8;
+  margin-bottom: 28px;
+}
+.notice-tel {
+  display: inline-block;
+  font-size: 32px; font-weight: 700; color: #1ec98a;
+  letter-spacing: 0.05em; text-decoration: none;
+  margin-bottom: 12px;
+}
+.notice-tel:hover { opacity: 0.8; }
+.notice-hours {
+  font-size: 12px; color: #4a5e4e; margin-top: 8px;
+}
 </style>
 </head>
 <body>
@@ -198,67 +225,13 @@ button[type="submit"]:hover { background: #18b07a; }
     <div class="card-title">無料診断を申し込む</div>
     <div class="card-subtitle">必須項目（*）のみでお申し込みいただけます</div>
 
-    <form name="contact" method="POST" data-netlify="true" action="/thanks.html">
-      <input type="hidden" name="form-name" value="contact">
-
-      <div class="reassurance">
-        <div class="reassurance-icon">🔒</div>
-        <div class="reassurance-text"><strong>しつこい営業は一切しません。</strong>ご相談後、押し売りや継続的な営業連絡はなく、内容にご納得いただけた場合のみ先に進みます。</div>
+    <div class="notice-box">
+        <div class="notice-icon">📞</div>
+        <h2 class="notice-title">現在、電話でのお問い合わせを受け付けています</h2>
+        <p class="notice-text">フォームからのお申し込みは一時的に停止しております。<br>お手数ですが、下記のお電話にてお問い合わせください。</p>
+        <a href="tel:052-898-4971" class="notice-tel">052-898-4971</a>
+        <p class="notice-hours">受付時間：平日 9:00〜18:00</p>
       </div>
-
-      <div class="row">
-        <div class="field">
-          <label>会社名<span class="req">*</span></label>
-          <input type="text" name="company" placeholder="株式会社〇〇" required>
-        </div>
-        <div class="field">
-          <label>お名前<span class="req">*</span></label>
-          <input type="text" name="name" placeholder="田中 太郎" required>
-        </div>
-      </div>
-
-      <div class="field">
-        <label>メールアドレス<span class="req">*</span></label>
-        <input type="email" name="email" placeholder="info@example.com" required>
-      </div>
-
-      <div class="field">
-        <label>電話番号<span class="opt">任意</span></label>
-        <input type="tel" name="phone" placeholder="052-000-0000">
-      </div>
-
-      <div class="field">
-        <label>ご相談内容<span class="opt">任意</span></label>
-        <select name="inquiry">
-          <option value="" disabled selected>選択してください</option>
-          <option>採用動画を初めて作りたい</option>
-          <option>既存の動画を改善したい</option>
-          <option>採用動画の効果が出ていない</option>
-          <option>料金・プランについて知りたい</option>
-          <option>その他</option>
-        </select>
-      </div>
-
-      <div class="field">
-        <label>ご質問・ご要望<span class="opt">任意</span></label>
-        <textarea name="message" placeholder="採用の課題や、気になることがあればお気軽にどうぞ（なくてもOKです）"></textarea>
-      </div>
-
-      <button type="submit">無料診断を申し込む →</button>
-      <div class="note">
-        送信後、1営業日以内にご連絡します
-        <div class="note-step">
-          <div class="step"><div class="step-num">1</div>フォーム送信</div>
-          <div class="step-arrow">›</div>
-          <div class="step"><div class="step-num">2</div>日程調整のご連絡</div>
-          <div class="step-arrow">›</div>
-          <div class="step"><div class="step-num">3</div>30分オンライン相談</div>
-        </div>
-      </div>
-      <div class="privacy-note">
-        送信いただいた情報は<a href="/privacy.html" target="_blank">プライバシーポリシー</a>に基づき適切に管理します
-      </div>
-    </form>
   </div>
 
   <div class="trust">
