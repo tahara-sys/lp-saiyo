@@ -213,7 +213,7 @@ body { background: #fff !important; background-image: none !important; }
   margin-bottom: 16px;
 }
 .lp-fail-icon::after {
-  content: '×';
+  /* removed */
   color: #fff;
   font-size: 16px;
   font-weight: 700;
@@ -588,6 +588,18 @@ body { background: #fff !important; background-image: none !important; }
 @media (max-width: 480px) {
   .lp-works-grid { grid-template-columns: 1fr !important; }
 }
+
+.lp-fail-icon {
+  width: 52px; height: 52px;
+  background: #f5f5f3;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+.lp-fail-icon svg { display:block; }
+
 </style>
 
 <div class="lp-wrap">
