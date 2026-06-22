@@ -225,38 +225,64 @@ section { padding: var(--section-pad); }
 
 /* ===== WHY RESOLO ===== */
 .why { background: var(--dark); }
-.why-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 64px;
-  align-items: center;
+.why-body {
   margin-top: 64px;
 }
-@media (max-width: 768px) { .why-grid { grid-template-columns: 1fr; gap: 40px; } }
-.why-visual {
-  aspect-ratio: 16/9;
+.why-lead-block {
+  max-width: 800px;
+  margin: 0 auto 64px;
+}
+.why-lead-block .big-quote {
+  font-size: clamp(20px, 3vw, 26px);
+  font-weight: 900;
+  color: var(--white);
+  line-height: 1.6;
+  margin-bottom: 28px;
+  border-left: 4px solid var(--teal);
+  padding-left: 24px;
+}
+.why-lead-block .body-text {
+  font-size: 16px;
+  color: var(--gray-light);
+  line-height: 2;
+  padding-left: 28px;
+}
+.why-visual-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+@media (max-width: 768px) {
+  .why-visual-row { grid-template-columns: 1fr; }
+}
+.why-pillar {
   background: var(--dark3);
+  border: 1px solid rgba(255,255,255,0.07);
   border-radius: 8px;
-  overflow: hidden;
-  position: relative;
+  padding: 36px 28px;
+  text-align: center;
+  transition: border-color 0.2s, transform 0.2s;
 }
-.why-visual iframe { width: 100%; height: 100%; border: none; }
-.why-points { display: flex; flex-direction: column; gap: 32px; }
-.why-point { display: flex; gap: 20px; align-items: flex-start; }
-.why-point-icon {
-  width: 48px; height: 48px;
-  background: rgba(0,181,160,0.1);
-  border: 1px solid rgba(0,181,160,0.3);
-  border-radius: 8px;
+.why-pillar:hover { border-color: rgba(0,181,160,0.35); transform: translateY(-4px); }
+.why-pillar .pillar-icon {
+  width: 72px; height: 72px;
+  margin: 0 auto 20px;
   display: flex; align-items: center; justify-content: center;
-  flex-shrink: 0;
-  font-size: 20px;
 }
-.why-point-body h4 {
+.why-pillar .pillar-icon svg { width: 100%; height: 100%; }
+.why-pillar h4 {
   font-size: 17px; font-weight: 700;
-  color: var(--white); margin-bottom: 6px;
+  color: var(--white); margin-bottom: 12px;
 }
-.why-point-body p { font-size: 14px; color: var(--gray); line-height: 1.7; }
+.why-pillar p { font-size: 13px; color: var(--gray); line-height: 1.8; }
+.why-pillar .pillar-num {
+  display: inline-block;
+  font-size: 11px; font-weight: 700; letter-spacing: 0.1em;
+  color: var(--teal);
+  border: 1px solid rgba(0,181,160,0.3);
+  padding: 2px 12px; border-radius: 20px;
+  margin-bottom: 16px;
+}
 
 /* ===== SERVICE ===== */
 .service { background: var(--dark2); }
@@ -683,32 +709,60 @@ section { padding: var(--section-pad); }
   <div class="section-inner">
     <span class="section-tag">Why Resolo</span>
     <h2 class="section-title">動画制作会社だからこその<br><span class="accent">採用支援</span></h2>
-    <p class="section-lead">採用動画制作で培った「伝える力」と「映像クオリティ」を、採用支援の全プロセスに活かします。</p>
-    <div class="why-grid">
-      <div class="why-visual">
-        <iframe src="https://www.youtube.com/embed/videoseries?list=PLxxxxxxx" title="Resolo採用動画実績" allowfullscreen loading="lazy"></iframe>
+    <div class="why-body">
+      <div class="why-lead-block">
+        <p class="big-quote">採用成功を左右するのは<br>媒体ではなく、<span style="color:var(--teal)">コンテンツ</span>です。</p>
+        <p class="body-text">どれだけ求人広告に予算をかけても、伝える内容が弱ければ応募は増えません。逆に、魅力が正しく整理されたコンテンツがあれば、動画・LP・採用サイト・求人媒体などあらゆる施策の成果が高まります。<br><br>私たちは採用動画制作を通じて培った「伝える技術」を武器に、採用活動の土台となるコンテンツづくりから支援します。動画はそのための手段の一つです。</p>
       </div>
-      <div class="why-points">
-        <div class="why-point">
-          <div class="why-point-icon">🎬</div>
-          <div class="why-point-body">
-            <h4>映像クオリティが採用の差別化になる</h4>
-            <p>プロのクリエイターが制作する採用動画は、競合他社との明確な差別化を生み、求職者の印象を大きく変えます。</p>
+      <div class="why-visual-row">
+        <div class="why-pillar">
+          <span class="pillar-num">STEP 01</span>
+          <div class="pillar-icon">
+            <svg viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="36" cy="36" r="35" stroke="rgba(0,181,160,0.25)" stroke-width="1"/>
+              <rect x="18" y="22" width="36" height="28" rx="3" stroke="#00b5a0" stroke-width="1.5" fill="none"/>
+              <line x1="24" y1="30" x2="48" y2="30" stroke="#00b5a0" stroke-width="1.5" stroke-linecap="round"/>
+              <line x1="24" y1="36" x2="42" y2="36" stroke="rgba(0,181,160,0.5)" stroke-width="1.5" stroke-linecap="round"/>
+              <line x1="24" y1="42" x2="38" y2="42" stroke="rgba(0,181,160,0.3)" stroke-width="1.5" stroke-linecap="round"/>
+              <circle cx="54" cy="22" r="8" fill="#0a0a0a" stroke="#ffd700" stroke-width="1.5"/>
+              <path d="M51 22 L53 24 L57 20" stroke="#ffd700" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
           </div>
+          <h4>魅力の言語化・整理</h4>
+          <p>会社・仕事・人の魅力を構造化し、求職者に刺さるメッセージを設計します。すべての施策の土台となります。</p>
         </div>
-        <div class="why-point">
-          <div class="why-point-icon">🔗</div>
-          <div class="why-point-body">
-            <h4>動画・LP・SNS・媒体を一気通貫で</h4>
-            <p>バラバラに発注するコストと手間をゼロに。Resoloが採用ブランディングを一貫したメッセージで構築します。</p>
+        <div class="why-pillar">
+          <span class="pillar-num">STEP 02</span>
+          <div class="pillar-icon">
+            <svg viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="36" cy="36" r="35" stroke="rgba(0,181,160,0.25)" stroke-width="1"/>
+              <rect x="14" y="28" width="20" height="14" rx="2" stroke="#00b5a0" stroke-width="1.5" fill="none"/>
+              <polygon points="34,31 40,35 34,39" fill="#00b5a0"/>
+              <rect x="42" y="24" width="16" height="24" rx="2" stroke="rgba(0,181,160,0.6)" stroke-width="1.5" fill="none"/>
+              <line x1="45" y1="30" x2="55" y2="30" stroke="rgba(0,181,160,0.5)" stroke-width="1" stroke-linecap="round"/>
+              <line x1="45" y1="34" x2="55" y2="34" stroke="rgba(0,181,160,0.3)" stroke-width="1" stroke-linecap="round"/>
+              <line x1="45" y1="38" x2="52" y2="38" stroke="rgba(0,181,160,0.3)" stroke-width="1" stroke-linecap="round"/>
+            </svg>
           </div>
+          <h4>動画・コンテンツ制作</h4>
+          <p>整理されたメッセージを、採用動画・LP・SNSコンテンツとして高いクオリティで形にします。</p>
         </div>
-        <div class="why-point">
-          <div class="why-point-icon">📊</div>
-          <div class="why-point-body">
-            <h4>採用結果にコミットするPDCA</h4>
-            <p>制作して終わりではなく、応募数・内定承諾率などのKPIを設定し、継続的に改善する体制で支援します。</p>
+        <div class="why-pillar">
+          <span class="pillar-num">STEP 03</span>
+          <div class="pillar-icon">
+            <svg viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="36" cy="36" r="35" stroke="rgba(0,181,160,0.25)" stroke-width="1"/>
+              <path d="M20 48 L28 36 L34 42 L42 30 L52 38" stroke="#00b5a0" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+              <circle cx="28" cy="36" r="2.5" fill="#00b5a0"/>
+              <circle cx="34" cy="42" r="2.5" fill="#00b5a0"/>
+              <circle cx="42" cy="30" r="2.5" fill="#00b5a0"/>
+              <circle cx="52" cy="38" r="2.5" fill="#ffd700"/>
+              <line x1="20" y1="52" x2="52" y2="52" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+              <line x1="20" y1="20" x2="20" y2="52" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+            </svg>
           </div>
+          <h4>全媒体への展開・改善</h4>
+          <p>求人媒体・SNS・自社サイトへ展開し、データを見ながら継続的に改善。採用コストを最適化します。</p>
         </div>
       </div>
     </div>
