@@ -371,9 +371,15 @@ section { padding: var(--section-pad); }
 .media { background: var(--dark2); }
 .media-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(4, 1fr);
   gap: 20px;
   margin-top: 48px;
+}
+@media (max-width: 900px) {
+  .media-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 480px) {
+  .media-grid { grid-template-columns: 1fr; }
 }
 .media-card {
   background: var(--dark);
@@ -906,11 +912,7 @@ section { padding: var(--section-pad); }
         <div class="media-type">広告媒体 / ターゲティング</div>
         <div class="media-desc">YouTube広告・Meta広告などで採用動画を配信。ターゲット属性に絞った配信で、潜在層への認知と興味付けを行う。</div>
       </div>
-      <div class="media-card">
-        <div class="media-name">X（旧Twitter）</div>
-        <div class="media-type">SNS / 認知拡大・情報発信</div>
-        <div class="media-desc">採用情報や社員の声をリアルタイムで発信。動画クリップやティザー投稿で企業の魅力を拡散し、幅広い層への認知獲得につなげる。</div>
-      </div>
+
     </div>
   </div>
 </section>
