@@ -382,15 +382,25 @@ section { padding: var(--section-pad); }
   .media-grid { grid-template-columns: 1fr; }
 }
 .media-card {
-  background: var(--dark);
+  background: var(--dark3);
   border: 1px solid rgba(255,255,255,0.06);
-  border-radius: 8px;
-  padding: 24px 20px;
+  border-radius: 12px;
+  padding: 32px 16px 24px;
   text-align: center;
+  transition: border-color 0.2s, transform 0.2s;
 }
-.media-card .media-name { font-size: 16px; font-weight: 700; color: var(--white); margin-bottom: 8px; }
-.media-card .media-type { font-size: 12px; color: var(--teal); margin-bottom: 12px; }
-.media-card .media-desc { font-size: 12px; color: var(--gray); line-height: 1.6; }
+.media-card:hover { border-color: rgba(0,181,160,0.35); transform: translateY(-4px); }
+.media-card .media-icon {
+  width: 56px; height: 56px;
+  margin: 0 auto 16px;
+  display: flex; align-items: center; justify-content: center;
+  background: rgba(0,181,160,0.08);
+  border-radius: 14px;
+  border: 1px solid rgba(0,181,160,0.2);
+}
+.media-card .media-icon svg { width: 28px; height: 28px; }
+.media-card .media-name { font-size: 15px; font-weight: 700; color: var(--white); margin-bottom: 4px; }
+.media-card .media-type { font-size: 11px; color: var(--teal); }
 
 /* ===== RESULT ===== */
 .result { background: var(--dark); }
@@ -875,48 +885,100 @@ section { padding: var(--section-pad); }
   <div class="section-inner">
     <span class="section-tag">Media</span>
     <h2 class="section-title">動画を軸にした<span class="accent">採用チャネル展開</span></h2>
-    <p class="section-lead">制作した採用コンテンツは、様々なチャネルで活用できます。一度つくった動画・コピー・ビジュアルを、求職者との接点に合わせて最大限に展開します。</p>
+    <p class="section-lead">制作したコンテンツは、求職者との様々な接点で活用できます。</p>
     <div class="media-grid">
       <div class="media-card">
+        <div class="media-icon">
+          <svg viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="3" y="5" width="22" height="16" rx="2" stroke="#00b5a0" stroke-width="1.5" fill="none"/>
+            <line x1="9" y1="25" x2="19" y2="25" stroke="#00b5a0" stroke-width="1.5" stroke-linecap="round"/>
+            <line x1="14" y1="21" x2="14" y2="25" stroke="#00b5a0" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </div>
         <div class="media-name">採用サイト・HP</div>
-        <div class="media-type">自社メディア / 会社紹介</div>
-        <div class="media-desc">採用動画を自社HPや採用サイトに埋め込み、訪問者への第一印象を高める。最も安定した採用コンテンツの置き場所。</div>
+        <div class="media-type">自社メディア</div>
       </div>
       <div class="media-card">
+        <div class="media-icon">
+          <svg viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="3" y="4" width="22" height="20" rx="2" stroke="#00b5a0" stroke-width="1.5" fill="none"/>
+            <line x1="8" y1="10" x2="20" y2="10" stroke="#00b5a0" stroke-width="1.5" stroke-linecap="round"/>
+            <line x1="8" y1="14" x2="17" y2="14" stroke="rgba(0,181,160,0.5)" stroke-width="1.5" stroke-linecap="round"/>
+            <rect x="8" y="18" width="12" height="3" rx="1.5" fill="#00b5a0"/>
+          </svg>
+        </div>
         <div class="media-name">採用LP</div>
-        <div class="media-type">自社メディア / 応募獲得</div>
-        <div class="media-desc">動画とコピーを組み合わせた採用特化のLP。応募フォームへの誘導を最大化し、広告流入先としても機能する。</div>
+        <div class="media-type">応募獲得</div>
       </div>
       <div class="media-card">
-        <div class="media-name">会社説明会・説明動画</div>
-        <div class="media-type">説明会 / オンライン対応</div>
-        <div class="media-desc">説明会での上映用動画、オンライン説明会のオープニング動画など。担当者の話の質を上げ、理解促進・志望度向上に貢献。</div>
+        <div class="media-icon">
+          <svg viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="14" cy="10" r="5" stroke="#00b5a0" stroke-width="1.5" fill="none"/>
+            <path d="M5 24c0-4.418 4.03-8 9-8s9 3.582 9 8" stroke="#00b5a0" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+            <circle cx="22" cy="8" r="3" fill="rgba(0,181,160,0.15)" stroke="#ffd700" stroke-width="1"/>
+            <line x1="21" y1="8" x2="23" y2="8" stroke="#ffd700" stroke-width="1" stroke-linecap="round"/>
+            <line x1="22" y1="7" x2="22" y2="9" stroke="#ffd700" stroke-width="1" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div class="media-name">会社説明会</div>
+        <div class="media-type">説明会・オンライン対応</div>
       </div>
       <div class="media-card">
+        <div class="media-icon">
+          <svg viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="2" y="6" width="24" height="16" rx="2" stroke="#00b5a0" stroke-width="1.5" fill="none"/>
+            <polygon points="11,10 11,18 19,14" fill="#00b5a0"/>
+          </svg>
+        </div>
         <div class="media-name">YouTube</div>
         <div class="media-type">動画プラットフォーム</div>
-        <div class="media-desc">採用動画のメイン配信先。「社員インタビュー」「1日密着」など複数コンテンツを蓄積し、企業チャンネルとして機能させる。</div>
       </div>
       <div class="media-card">
+        <div class="media-icon">
+          <svg viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="4" y="4" width="20" height="20" rx="5" stroke="#00b5a0" stroke-width="1.5" fill="none"/>
+            <circle cx="14" cy="14" r="4.5" stroke="#00b5a0" stroke-width="1.5" fill="none"/>
+            <circle cx="20" cy="8" r="1.5" fill="#00b5a0"/>
+          </svg>
+        </div>
         <div class="media-name">Instagram</div>
         <div class="media-type">SNS / 採用ブランディング</div>
-        <div class="media-desc">リール動画・ストーリーズで職場のリアルを発信。若手層の「この会社気になる」を自然に引き出す採用ブランディング。</div>
       </div>
       <div class="media-card">
+        <div class="media-icon">
+          <svg viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M4 4 L24 4 L16 14 L24 24 L4 24 L12 14 Z" stroke="#00b5a0" stroke-width="1.5" stroke-linejoin="round" fill="none"/>
+            <line x1="4" y1="4" x2="24" y2="24" stroke="rgba(0,181,160,0.3)" stroke-width="1" stroke-linecap="round"/>
+          </svg>
+        </div>
         <div class="media-name">TikTok</div>
         <div class="media-type">SNS / Z世代採用</div>
-        <div class="media-desc">Z世代へのダイレクトリーチに最適。短尺動画で職場の雰囲気・仕事の面白さを伝え、認知拡大とバイラル拡散を狙う。</div>
       </div>
       <div class="media-card">
-        <div class="media-name">Web広告（動画広告）</div>
+        <div class="media-icon">
+          <svg viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="14" cy="14" r="10" stroke="#00b5a0" stroke-width="1.5" fill="none"/>
+            <path d="M14 4 C14 4 10 10 10 14 C10 18 14 24 14 24" stroke="#00b5a0" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+            <path d="M14 4 C14 4 18 10 18 14 C18 18 14 24 14 24" stroke="#00b5a0" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+            <line x1="4" y1="14" x2="24" y2="14" stroke="rgba(0,181,160,0.4)" stroke-width="1.5" stroke-linecap="round"/>
+            <line x1="5" y1="9" x2="23" y2="9" stroke="rgba(0,181,160,0.25)" stroke-width="1" stroke-linecap="round"/>
+            <line x1="5" y1="19" x2="23" y2="19" stroke="rgba(0,181,160,0.25)" stroke-width="1" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div class="media-name">Web広告</div>
         <div class="media-type">広告媒体 / ターゲティング</div>
-        <div class="media-desc">YouTube広告・Meta広告などで採用動画を配信。ターゲット属性に絞った配信で、潜在層への認知と興味付けを行う。</div>
       </div>
-
       <div class="media-card">
+        <div class="media-icon">
+          <svg viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M4 8 C4 6.343 5.343 5 7 5 L21 5 C22.657 5 24 6.343 24 8 L24 17 C24 18.657 22.657 20 21 20 L16 20 L12 24 L12 20 L7 20 C5.343 20 4 18.657 4 17 Z" stroke="#00b5a0" stroke-width="1.5" fill="none"/>
+            <circle cx="10" cy="13" r="1.5" fill="#00b5a0"/>
+            <circle cx="14" cy="13" r="1.5" fill="#00b5a0"/>
+            <circle cx="18" cy="13" r="1.5" fill="#00b5a0"/>
+          </svg>
+        </div>
         <div class="media-name">ダイレクトメッセージ</div>
         <div class="media-type">内定者フォロー / 離脱防止</div>
-        <div class="media-desc">内定後の不安解消や入社前フォローに動画を活用。SNSのDMや個別メッセージで送ることで、志望度・入社意欲を維持し、内定辞退を防ぐ。</div>
       </div>
     </div>
   </div>
