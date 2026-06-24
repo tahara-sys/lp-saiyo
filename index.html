@@ -87,6 +87,15 @@ img { max-width: 100%; height: auto; display: block; }
   position: relative;
   overflow: hidden;
 }
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background-image: url('https://resolo.net/wp-content/uploads/2025/06/key_visual.webp');
+  background-size: cover;
+  background-position: center;
+  opacity: 0.25;
+  filter: saturate(1.1);
+}
 .hero::before {
   content: '';
   position: absolute;
@@ -648,6 +657,7 @@ section { padding: var(--section-pad); }
 
 <!-- ===== HERO ===== -->
 <section class="hero">
+  <div class="hero-bg"></div>
   <div class="hero-inner">
     <div class="hero-badge">採用支援ワンストップ</div>
     <h1>
